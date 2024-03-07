@@ -1,0 +1,110 @@
+
+#hero{
+    height: 100vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("media-html/html-usos.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#dequetrata .container{
+    text-align: center;
+    padding: 100px 0px;
+}
+
+#dequetrata h2{
+    text-align: center;
+}
+
+#dequetrata p{
+    text-align: center;
+    padding: 10px;
+}
+
+#adivinando{
+    background-color: antiquewhite;
+}
+
+#adivinando h3{
+    text-align: center;
+}
+
+#adivinando p{
+    text-align: center;
+    padding: 10px;
+}
+
+#adivinando .container{
+    text-align: center;
+    padding: 0px 100px;
+}
+
+#juegoadivinando{
+    background-color: white;
+}
+
+@media (min-width: 720px){
+    #dequetrata .container{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #dequetrata .texto{
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #dequetrata h2{
+        margin-top: 0;
+    }
+
+    #dequetrata .container .img-container{
+        background-image:url("media/ramas-de-la-programacion.jpg");
+        background-size: cover;
+        background-position: center center;
+        height: 400px;
+        width: 400px;
+    }
+
+    #adivinando .container{
+        text-align: left;
+
+    }
+
+    #adivinando h3{
+        padding-right: 380px;
+    }
+
+    #adivinando p{
+        width: 70%;
+        max-width: 1000px;
+        padding-left: 0px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #adivinando{
+        background-image:url("media-html/adivinar.jpg");
+        background-repeat: no-repeat;
+        background-size: 450px 350px;
+        background-position: calc(100vw - 100px) 0px;
+    }
+}
+
+@media (min-width: 1200px){
+    #adivinando{
+        background-position-x: calc(100vw - 500px);
+    }
+}
+

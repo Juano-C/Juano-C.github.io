@@ -1,0 +1,172 @@
+<html>
+
+<head>
+    <title>Proyectos html</title>
+    <link rel="stylesheet" href="proyecto-html.css">
+    <link rel="stylesheet" href="basico.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="">
+                <p class="logo"> Proyecto HTML</p>
+            </a>
+
+            <nav>
+                <a href="#dequetrata">¿De qué trata?</a>
+                <a href="#proyectoslenguajes">Proyectos</a>
+                <a href="juano-c.github.io">Volver</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero"></section>
+
+    <section id="dequetrata">
+        <div class="container">
+            <div class="img-container"></div>
+            <div class="texto">
+                <h2>¡Usos de <span class="color-acento-blueviolet">HTML</span>!</h2>
+                <p>Con el fin de practicar HTML decido agregar e ir creando proyectos tanto de juegos como de esta misma
+                    pagina para demostrar mi conocimiento</p>
+                <p>A continuación podemos ver los distintos proyectos</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="adivinando">
+        <div class="container">
+            <div class="img-container"></div>
+            <div class="adivinado">
+                <h3>¡Adivinado!</h3>
+                <p>Juego simple donde hay que adivinar el número al azar. Tendrás infinitos intentos y pistas para
+                    ayudarte. Puedes agregar dificultad, pero ten cuidado, podrías quedarte despierto toda la noche
+                    intentando adivinar y por la frustración comenzar a programar para crear un hack que te ayude y así
+                    volverte un genio del lenguaje, tan así que muchos líderes del mundo te cazarán para usarte por la
+                    cantidad de conocimiento que tienes, resultando así en una guerra mundial capaz de destruir la
+                    humanidad.</p>
+                <p>Buena suerte!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="juegoadivinando">
+        <div class="container">
+            <p>Estoy pensando en un número entre 1 y <span id="rango">100</span>. ¿Puedes adivinarlo?</p>
+            <input type="number" id="adivinado" style="width: 200px; height: 50px; font-size: 20px;">
+            <button onclick="checkGuess()">Adivinar</button>
+            <button onclick="aumentarDificultad()">Aumentar dificultad</button>
+            <button onclick="reducirDificultad()">Reducir dificultad</button>
+            <button onclick="resetGame()">Reiniciar juego</button>
+            <p id="resultado"></p>
+        </div>
+
+        <script>
+            let target = Math.floor(Math.random() * 100) + 1;
+            let numGuesses = 0;
+            let previousTarget = 100;
+            let currentRange = 100;
+
+            function aumentarDificultad() {
+                previousTarget = target;
+                currentRange *= 10; // Multiplica el rango actual por 10
+                target = Math.floor(Math.random() * currentRange) + 1; // Selecciona un nuevo target dentro del nuevo rango
+                resetGame();
+            }
+
+            function reducirDificultad() {
+                previousTarget = target;
+                currentRange /= 10; // Reduce el rango actual dividiéndolo por 10
+                if (currentRange < 10) {
+                    currentRange = 10; // Establece un límite mínimo para el rango
+                }
+                target = Math.floor(Math.random() * currentRange) + 1; // Selecciona un nuevo target dentro del nuevo rango
+                resetGame();
+            }
+
+            function checkGuess() {
+                numGuesses += 1;
+                const guess = document.getElementById("adivinado").value;
+                const resultParagraph = document.getElementById("resultado");
+
+                if (guess == target) {
+                    resultParagraph.innerHTML = "¡Lo has conseguido! Te tomó " + numGuesses + " intentos.";
+                } else if (guess < target) {
+                    resultParagraph.innerHTML = "Tu suposición es demasiado baja. Inténtalo de nuevo.";
+                } else if (guess > target) {
+                    resultParagraph.innerHTML = "Tu suposición es demasiado alta. Inténtalo de nuevo.";
+                }
+            }
+
+            function resetGame() {
+                numGuesses = 0;
+                document.getElementById("resultado").innerHTML = "";
+                document.getElementById("adivinado").value = "";
+                document.getElementById("rango").textContent = currentRange; // Actualiza el rango mostrado en el HTML
+            }
+        </script>
+    </section>
+
+    <section id="proyectoslenguajes">
+        <div class="container">
+            <ul>
+                <li>
+                    <form action="juano-c.github.io/proyecto-html.html" target="_blank">
+                        <button>Proyecto html</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="">
+                        <button>Proyecto en proceso...</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="">
+                        <button>Proyecto en proceso...</button>
+                    </form>
+                </li>
+                <li>
+                    <form action="">
+                        <button>Proyecto en proceso...</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div class="container">
+            <h1>Información de contacto</h1>
+            <div class="contactos-links">
+                <div class="carta">
+                    <h3>Linkedin</h3>
+                    <form action="//www.linkedin.com/in/juan-chauvet-70a3a7289/" target="_blank">
+                        <button>Mas info</button>
+                    </form>
+                </div>
+                <div class="carta">
+                    <h3>GitHub</h3>
+                    <form action="https://github.com/Juano-C" target="_blank">
+                        <button>Mas info</button>
+                    </form>
+                </div>
+                <div class="carta">
+                    <h3>Paypal</h3>
+                    <form action="https://www.paypal.me/juanchauvet" target="_blank">
+                        <button>Mas info</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy;Juano-C GitHub 2024</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
