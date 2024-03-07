@@ -1,4 +1,3 @@
-
 #hero{
     height: 100vh;
     background-image: linear-gradient(
@@ -6,7 +5,7 @@
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     )
-    ,url("media-html/html-usos.jpg");
+    ,url("/media-html/html-usos.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -69,7 +68,7 @@
     }
 
     #dequetrata .container .img-container{
-        background-image:url("media/ramas-de-la-programacion.jpg");
+        background-image:url("/media/ramas-de-la-programacion.jpg");
         background-size: cover;
         background-position: center center;
         height: 400px;
@@ -95,7 +94,7 @@
     }
 
     #adivinando{
-        background-image:url("media-html/adivinar.jpg");
+        background-image:url("/media-html/adivinar.jpg");
         background-repeat: no-repeat;
         background-size: 450px 350px;
         background-position: calc(100vw - 100px) 0px;
