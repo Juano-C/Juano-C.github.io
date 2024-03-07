@@ -114,7 +114,7 @@ header a:hover{
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     )
-    ,url("media/LinkedIn_icon.jpg");
+    ,url("/media/LinkedIn_icon.jpg");
 }
 
 .carta:nth-child(2){
@@ -123,7 +123,7 @@ header a:hover{
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     )
-    ,url("media/github.logo.jpg");
+    ,url("/media/github.logo.jpg");
 }
 
 .carta:nth-child(3){
@@ -132,7 +132,7 @@ header a:hover{
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     )
-    ,url("media/paypal.logo.jpg");    
+    ,url("/media/paypal.logo.jpg");    
 }
 
 footer{
@@ -170,7 +170,7 @@ footer .container{
     }
     
     #proyectoslenguajes{
-        background-image: url("media/malicious-programs.jpg");
+        background-image: url("/media/malicious-programs.jpg");
         background-repeat: no-repeat;
         background-size: 450px 350px;
         background-position: calc(100vw - 500px) 100px;
@@ -213,6 +213,9 @@ footer .container{
         background-position-x: calc(100vw - 800px);
     }
 }
+
+.color-acento-red{ color: red}
+.color-acento-blueviolet{ color:blueviolet}
 
 h1{ font-size: 3.5em; }
 h2{ font-size: 2.7em; }

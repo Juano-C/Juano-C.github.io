@@ -11,7 +11,7 @@
         rgba(0,0,0,0.5),
         rgba(0,0,0,0.5)
     )
-    ,url("media/shutterstock.jpg");
+    ,url("/media/shutterstock.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -71,7 +71,7 @@
     }
 
     #usos .container .img-container{
-        background-image:url("media/ramas-de-la-programacion.jpg");
+        background-image:url("/media/ramas-de-la-programacion.jpg");
         background-size: cover;
         background-position: center center;
         height: 500px;
