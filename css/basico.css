@@ -1,225 +1,249 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-html{
+:root {
+    --accent: blueviolet;
+    --accent-dark: rgb(112, 62, 112);
+    --ink: #202020;
+    --soft: #f8f3ec;
+    --shadow: 0 12px 30px rgba(0, 0, 0, .12);
+}
+
+html {
     scroll-behavior: smooth;
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
+body {
     margin: 0;
+    color: var(--ink);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-button{
-    font-size: 1.5em;
-    font-weight: bold;
-    padding: 10px 30px;
+section {
+    scroll-margin-top: 90px;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+.button {
+    display: inline-block;
+    border: 0;
     border-radius: 10px;
-    border: 2px solid rgba(0, 0, 0, 0.5);
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    padding: .7rem 1.25rem;
     color: white;
-    background-color: blueviolet;
-}
-
-button:hover{
-    background-color: rgb(112, 62, 112);
-}
-
-.container{
-    max-width: 1400px;
-    margin: auto;
-}
-
-header{
-    background-color: antiquewhite;
-}
-
-header .logo{
-    margin: 0;
-    padding: 25px 30px;
-    font-weight: bold;
-    color: blueviolet;
-    font-size: 1.6em;
-}
-
-header .container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header .nav{
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 25px;
-}
-
-header a{
-    padding: 5px 12px;
+    background: var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
     text-decoration: none;
-    font-weight: bold;
-    color: black;
+    transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
 }
 
-header a:hover{
-    color: blueviolet;
+button:hover,
+.button:hover {
+    background: var(--accent-dark);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+    transform: translateY(-2px);
 }
 
-#proyectoslenguajes{
+button:disabled {
+    opacity: .65;
+    cursor: not-allowed;
+}
+
+button:disabled:hover {
+    background: var(--accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+    transform: none;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid #f4c542;
+    outline-offset: 3px;
+}
+
+.container {
+    width: min(100% - 2rem, 1200px);
+    margin-inline: auto;
+}
+
+header {
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 248, 238, .97);
+    box-shadow: 0 2px 14px rgba(0, 0, 0, .08);
+}
+
+header .container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     flex-direction: column;
-    background-color: rgb(100, 100, 100);
-    height: 70vh;
+    align-items: center;
+    padding: .65rem 0;
 }
 
-#proyectoslenguajes li{
-    margin: 1px 0px;
-    font-weight: bold;
+header .logo {
+    margin: 0;
+    color: var(--accent);
+    font-size: 1.45rem;
+    font-weight: 800;
 }
 
-#contacto{
-    background-color: rgba(30, 30, 30);
+header .logo-link {
+    text-decoration: none;
+}
+
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .25rem .8rem;
+}
+
+header nav a {
+    padding: .25rem .35rem;
+    font-size: .92rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    color: var(--accent);
+}
+
+#proyectoslenguajes {
+    padding: 4rem 0;
+    background: #646464;
     color: white;
     text-align: center;
 }
 
-#contacto .container{
-    padding: 150px 12px;
-}
-
-#contacto h2{
-    margin-top: 0;
-    font-size: 3em;
-}
-
-#contacto p{
-    display: none;
-}
-
-#contacto .carta{
-    background-position: center center;
-    background-size: cover;
-    padding: 50px;
-    margin: 20px;
-    border-radius: 20px;
-}
-
-.carta:first-child{
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/media/LinkedIn_icon.jpg");
-}
-
-.carta:nth-child(2){
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/media/github.logo.jpg");
-}
-
-.carta:nth-child(3){
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/media/paypal.logo.jpg");    
-}
-
-footer{
-    background-color: rgb(230, 230, 230);
-}
-
-footer p{
+#proyectoslenguajes ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 1rem;
     margin: 0;
-    padding: 120px;
-    color: rgb(100, 100, 100);
+    padding: 0;
 }
 
-footer .container{
-    height: 200px;
+#proyectoslenguajes li {
+    margin: 0;
+}
+
+#proyectoslenguajes form,
+#proyectoslenguajes li > a {
+    display: block;
+}
+
+#proyectoslenguajes button {
+    width: 100%;
+    min-height: 3.5rem;
+}
+
+#contacto {
+    padding: 4rem 0;
+    background: #1e1e1e;
+    color: white;
+    text-align: center;
+}
+
+#contacto h1 {
+    margin-top: 0;
+}
+
+.contactos-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1rem;
+}
+
+#contacto .carta {
+    min-height: 170px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    margin: 0;
+    padding: 1.5rem;
+    border-radius: 18px;
+    background-position: center;
+    background-size: cover;
+    box-shadow: var(--shadow);
 }
 
-@media (min-width: 720px){
-    header{
+#contacto h3 {
+    margin: 0 0 1rem;
+}
+
+footer {
+    background: #e6e6e6;
+    color: #646464;
+}
+
+footer .container {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+.color-acento-red { color: red; }
+.color-acento-blueviolet { color: var(--accent); }
+
+h1, h2, h3 { line-height: 1.15; }
+h1 { font-size: clamp(2.2rem, 6vw, 3.5rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.7rem); }
+h3 { font-size: clamp(1.4rem, 3vw, 2rem); }
+p { font-size: clamp(1rem, 1.5vw, 1.15rem); }
+
+@media (min-width: 760px) {
+    header {
         position: fixed;
         width: 100%;
     }
 
-    header .container{
+    header .container {
+        min-height: 74px;
         flex-direction: row;
         justify-content: space-between;
     }
 
-    header nav{
-        flex-direction: row;
-        padding-bottom: 0;
-        padding-right: 20px;
+    header nav {
+        gap: .4rem 1rem;
     }
-    
-    #proyectoslenguajes{
-        background-image: url("/media/malicious-programs.jpg");
+
+    #proyectoslenguajes {
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+        background-image: url("../media/malicious-programs.jpg");
         background-repeat: no-repeat;
         background-size: 450px 350px;
-        background-position: calc(100vw - 500px) 100px;
+        background-position: right 12% center;
     }
 
-    #proyectoslenguajes .container{
-        text-align: initial;
+    #proyectoslenguajes .container {
+        margin-left: max(1rem, calc((100% - 1200px) / 2));
+        margin-right: max(1rem, calc((100% - 1200px) / 2));
+        text-align: left;
     }
 
-    #proyectoslenguajes ul{
-        margin-right: 950px;
+    #proyectoslenguajes ul {
+        width: min(100%, 430px);
     }
 
-    #contacto .contactos-links{
-        display: flex;
-        justify-content: center;
-    }
-
-    #contacto p{
-        display: block;
-        margin-bottom: 30px;
-    }
-
-    #contacto h3{
-        margin-top: 0;
-    }
-
-    #contacto .carta{
-        padding: 50px;
-    }
-
-    footer .container{
-        justify-content: flex-end;
-    }
-
-}
-
-@media (min-width: 1200px){
-    #proyectoslenguajes{
-        background-position-x: calc(100vw - 800px);
+    #contacto {
+        padding: 6rem 0;
     }
 }
-
-.color-acento-red{ color: red}
-.color-acento-blueviolet{ color:blueviolet}
-
-h1{ font-size: 3.5em; }
-h2{ font-size: 2.7em; }
-h3{ font-size: 2em; }
-p{ font-size: 1.25em; }
-ul{ list-style: none; }
-li{ font-size: 1.25em; }

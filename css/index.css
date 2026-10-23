@@ -1,80 +1,71 @@
-#hero{
+#hero {
+    min-height: min(760px, 88vh);
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    flex-direction: column;
-    height: 100vh;
+    padding: 5rem 1rem;
     color: white;
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/media/shutterstock.jpg");
-    background-repeat: no-repeat;
+    text-align: center;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url("../media/shutterstock.jpg");
+    background-position: center;
     background-size: cover;
-    background-position: center center;
 }
 
-#hero h1{
+#hero h1 {
+    margin: 0 0 1.5rem;
     color: white;
 }
 
-#quiensoy{
-    background-color: rgb(224, 230, 255);
+#quiensoy {
+    background: rgb(224, 230, 255);
 }
 
-#quiensoy .container{
-    margin: 0;
-    padding: 100px 30px;
-    font-size: 1.3em;
+#quiensoy .container,
+#usos .container {
+    padding: 4.5rem 0;
 }
 
-#quiensoy p{
-    text-align: right;
+#quiensoy .texto {
+    max-width: 850px;
+    margin-inline: auto;
 }
 
-#quiensoy h2{
-    margin: 0;
-    text-align: center;
-    padding: 25px 0px;
-}
-
-#usos .container{
-    text-align: center;
-    padding: 70px 0px;
-}
-
-#usos h2{
+#quiensoy h2,
+#quiensoy p {
     text-align: center;
 }
 
-@media (min-width: 720px){
-    #usos .container{
-        display: flex;
-        justify-content: space-evenly;
+#usos .container {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+}
+
+#usos .img-container {
+    min-height: 250px;
+    border-radius: 18px;
+    background: url("../media/ramas-de-la-programacion.jpg") center / cover;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .16);
+}
+
+#usos .texto {
+    max-width: 620px;
+    margin-inline: auto;
+}
+
+@media (min-width: 760px) {
+    #usos .container {
+        grid-template-columns: minmax(280px, 500px) minmax(0, 1fr);
+        gap: clamp(2rem, 7vw, 6rem);
+        text-align: left;
     }
 
-    #usos .texto{
-        width: 50%;
-        max-width: 600px;
-        text-align: initial;
-        padding-left: 30px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+    #usos .img-container {
+        min-height: 400px;
     }
 
-    #uso h2{
+    #usos h2 {
         margin-top: 0;
-    }
-
-    #usos .container .img-container{
-        background-image:url("/media/ramas-de-la-programacion.jpg");
-        background-size: cover;
-        background-position: center center;
-        height: 500px;
-        width: 500px;
     }
 }
