@@ -1,109 +1,91 @@
-#hero{
-    height: 100vh;
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/media-html/html-usos.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+#hero {
+    min-height: min(760px, 88vh);
+    background: linear-gradient(0deg, rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url("../media-html/html-usos.jpg") center / cover;
 }
 
-#dequetrata .container{
-    text-align: center;
-    padding: 100px 0px;
-}
-
-#dequetrata h2{
+#dequetrata .container {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    padding: 4.5rem 0;
     text-align: center;
 }
 
-#dequetrata p{
+#dequetrata .img-container {
+    min-height: 250px;
+    border-radius: 18px;
+    background: url("../media/ramas-de-la-programacion.jpg") center / cover;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .16);
+}
+
+#dequetrata .texto {
+    max-width: 620px;
+    margin-inline: auto;
+}
+
+#adivinando {
+    background: antiquewhite url("../media-html/adivinar.jpg") no-repeat right 1rem center;
+    background-size: 150px auto;
+}
+
+#adivinando .container {
+    min-height: 350px;
+    padding: 3rem 0;
+}
+
+#adivinando .adivinado {
+    max-width: 740px;
+}
+
+#juegoadivinando {
+    background: white;
     text-align: center;
-    padding: 10px;
 }
 
-#adivinando{
-    background-color: antiquewhite;
+#juegoadivinando .container {
+    padding: 3rem 0;
 }
 
-#adivinando h3{
-    text-align: center;
+.game-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .75rem;
+    max-width: 800px;
+    margin: 1.5rem auto;
 }
 
-#adivinando p{
-    text-align: center;
-    padding: 10px;
+#adivinado {
+    width: min(200px, 100%);
+    min-height: 50px;
+    padding: .5rem;
+    border: 2px solid #bbb;
+    border-radius: 8px;
+    font-size: 1.2rem;
 }
 
-#adivinando .container{
-    text-align: center;
-    padding: 0px 100px;
+#resultado {
+    min-height: 2rem;
+    font-weight: 700;
 }
 
-#juegoadivinando{
-    background-color: white;
-}
-
-@media (min-width: 720px){
-    #dequetrata .container{
-        display: flex;
-        justify-content: space-evenly;
+@media (min-width: 760px) {
+    #dequetrata .container {
+        grid-template-columns: minmax(280px, 400px) minmax(0, 1fr);
+        gap: clamp(2rem, 7vw, 6rem);
+        text-align: left;
     }
 
-    #dequetrata .texto{
-        width: 50%;
-        max-width: 600px;
-        text-align: initial;
-        padding-left: 30px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
+    #dequetrata .img-container {
+        min-height: 400px;
     }
 
-    #dequetrata h2{
+    #dequetrata h2 {
         margin-top: 0;
     }
 
-    #dequetrata .container .img-container{
-        background-image:url("/media/ramas-de-la-programacion.jpg");
-        background-size: cover;
-        background-position: center center;
-        height: 400px;
-        width: 400px;
-    }
-
-    #adivinando .container{
-        text-align: left;
-
-    }
-
-    #adivinando h3{
-        padding-right: 380px;
-    }
-
-    #adivinando p{
-        width: 70%;
-        max-width: 1000px;
-        padding-left: 0px;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    #adivinando{
-        background-image:url("/media-html/adivinar.jpg");
-        background-repeat: no-repeat;
-        background-size: 450px 350px;
-        background-position: calc(100vw - 100px) 0px;
+    #adivinando {
+        background-position: right 8% center;
+        background-size: min(38vw, 450px);
     }
 }
-
-@media (min-width: 1200px){
-    #adivinando{
-        background-position-x: calc(100vw - 500px);
-    }
-}
-

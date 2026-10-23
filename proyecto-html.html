@@ -1,15 +1,19 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyectos realizados con HTML y un juego para adivinar números.">
     <title>Proyectos html</title>
-    <link rel="stylesheet" href="css/proyecto-html.css">
     <link rel="stylesheet" href="css/basico.css">
+    <link rel="stylesheet" href="css/proyecto-html.css">
 </head>
 
 <body>
     <header>
         <div class="container">
-            <a href="">
+            <a class="logo-link" href="index.html">
                 <p class="logo"> Proyecto HTML</p>
             </a>
 
@@ -54,12 +58,14 @@
     <section id="juegoadivinando">
         <div class="container">
             <p>Estoy pensando en un número entre 1 y <span id="rango">100</span>. ¿Puedes adivinarlo?</p>
-            <input type="number" id="adivinado" style="width: 200px; height: 50px; font-size: 20px;">
-            <button onclick="checkGuess()">Adivinar</button>
-            <button onclick="aumentarDificultad()">Aumentar dificultad</button>
-            <button onclick="reducirDificultad()">Reducir dificultad</button>
-            <button onclick="resetGame()">Reiniciar juego</button>
-            <p id="resultado"></p>
+            <div class="game-controls">
+                <input type="number" id="adivinado" min="1" aria-label="Número a adivinar">
+                <button type="button" onclick="checkGuess()">Adivinar</button>
+                <button type="button" onclick="aumentarDificultad()">Aumentar dificultad</button>
+                <button type="button" onclick="reducirDificultad()">Reducir dificultad</button>
+                <button type="button" onclick="resetGame()">Reiniciar juego</button>
+            </div>
+            <p id="resultado" aria-live="polite"></p>
         </div>
 
         <script>
@@ -86,23 +92,31 @@
             }
 
             function checkGuess() {
-                numGuesses += 1;
-                const guess = document.getElementById("adivinado").value;
+                const guess = Number(document.getElementById("adivinado").value);
                 const resultParagraph = document.getElementById("resultado");
 
-                if (guess == target) {
-                    resultParagraph.innerHTML = "¡Lo has conseguido! Te tomó " + numGuesses + " intentos.";
+                if (!guess || guess < 1 || guess > currentRange) {
+                    resultParagraph.textContent = "Introduce un número válido dentro del rango.";
+                    return;
+                }
+
+                numGuesses += 1;
+
+                if (guess === target) {
+                    resultParagraph.textContent = "¡Lo has conseguido! Te tomó " + numGuesses + " intentos.";
                 } else if (guess < target) {
-                    resultParagraph.innerHTML = "Tu suposición es demasiado baja. Inténtalo de nuevo.";
-                } else if (guess > target) {
-                    resultParagraph.innerHTML = "Tu suposición es demasiado alta. Inténtalo de nuevo.";
+                    resultParagraph.textContent = "Tu suposición es demasiado baja. Inténtalo de nuevo.";
+                } else {
+                    resultParagraph.textContent = "Tu suposición es demasiado alta. Inténtalo de nuevo.";
                 }
             }
 
             function resetGame() {
                 numGuesses = 0;
-                document.getElementById("resultado").innerHTML = "";
-                document.getElementById("adivinado").value = "";
+                document.getElementById("resultado").textContent = "";
+                const input = document.getElementById("adivinado");
+                input.value = "";
+                input.max = currentRange;
                 document.getElementById("rango").textContent = currentRange; // Actualiza el rango mostrado en el HTML
             }
         </script>
@@ -113,22 +127,22 @@
             <ul>
                 <li>
                     <form action="juano-c.github.io/proyecto-html.html" target="_blank">
-                        <button>Proyecto html</button>
+                        <button type="button">Proyecto HTML</button>
                     </form>
                 </li>
                 <li>
                     <form action="">
-                        <button>Proyecto en proceso...</button>
+                        <button type="button" disabled>Proyecto en proceso...</button>
                     </form>
                 </li>
                 <li>
                     <form action="">
-                        <button>Proyecto en proceso...</button>
+                        <button type="button" disabled>Proyecto en proceso...</button>
                     </form>
                 </li>
                 <li>
                     <form action="">
-                        <button>Proyecto en proceso...</button>
+                        <button type="button" disabled>Proyecto en proceso...</button>
                     </form>
                 </li>
             </ul>
